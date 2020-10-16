@@ -27,6 +27,12 @@ namespace DataStructures.SortedLinkedList
         /// <summary>
         /// Gets or sets tODO. TODO.
         /// </summary>
-        public SortedLinkedListNode<T>? Next { get; set; }
+        public SortedLinkedListNode<T>? Next { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the previous node.
+        /// </summary>
+        public SortedLinkedListNode<T>? Previous { get; set; } = null;
+
     }
 }

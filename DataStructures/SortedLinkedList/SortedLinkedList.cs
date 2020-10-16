@@ -12,6 +12,8 @@ namespace DataStructures.SortedLinkedList
     {
         private long length = 0;
 
+        private bool ascending = true;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SortedLinkedList{T}"/> class.
         /// TODO.
@@ -28,6 +30,25 @@ namespace DataStructures.SortedLinkedList
             get
             {
                 return length;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the linked list is in ascending order.
+        /// </summary>
+        public bool Ascending {
+            get
+            {
+                return ascending;
+            }
+
+            set
+            {
+                if (ascending != value)
+                {
+                    ascending = value;
+                    Reverse();
+                }
             }
         }
 
@@ -52,15 +73,14 @@ namespace DataStructures.SortedLinkedList
         {
             if (Head == null)
             {
-                Head = new SortedLinkedListNode<T>(data)
-                {
-                    Next = null,
-                };
-
+                Head = new SortedLinkedListNode<T>(data);
+                Tail = Head;
                 length = 1;
             }
             else
             {
+                var next = Head.Data;
+
                 // TODO: Get the place to insert the next element.
             }
 
